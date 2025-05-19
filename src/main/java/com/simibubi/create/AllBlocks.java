@@ -157,6 +157,7 @@ import com.simibubi.create.content.kinetics.speedController.SpeedControllerBlock
 import com.simibubi.create.content.kinetics.steamEngine.PoweredShaftBlock;
 import com.simibubi.create.content.kinetics.steamEngine.SteamEngineBlock;
 import com.simibubi.create.content.kinetics.transmission.ClutchBlock;
+import com.simibubi.create.content.kinetics.transmission.ComplexClutchBlock;
 import com.simibubi.create.content.kinetics.transmission.GearshiftBlock;
 import com.simibubi.create.content.kinetics.transmission.sequencer.SequencedGearshiftBlock;
 import com.simibubi.create.content.kinetics.transmission.sequencer.SequencedGearshiftGenerator;
@@ -469,6 +470,18 @@ public class AllBlocks {
 		.register();
 
 	public static final BlockEntry<ClutchBlock> CLUTCH = REGISTRATE.block("clutch", ClutchBlock::new)
+		.initialProperties(SharedProperties::stone)
+		.properties(p -> p.noOcclusion()
+			.mapColor(MapColor.PODZOL))
+		.addLayer(() -> RenderType::cutoutMipped)
+		.transform(CStress.setNoImpact())
+		.transform(axeOrPickaxe())
+		.blockstate((c, p) -> BlockStateGen.axisBlock(c, p, AssetLookup.forPowered(c, p)))
+		.item()
+		.transform(customItemModel())
+		.register();
+
+	public static final BlockEntry<ComplexClutchBlock> COMPLEX_CLUTCH = REGISTRATE.block("complex_clutch", ComplexClutchBlock::new)
 		.initialProperties(SharedProperties::stone)
 		.properties(p -> p.noOcclusion()
 			.mapColor(MapColor.PODZOL))

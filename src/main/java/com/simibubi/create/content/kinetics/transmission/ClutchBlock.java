@@ -26,7 +26,7 @@ public class ClutchBlock extends GearshiftBlock {
 			detachKinetics(worldIn, pos, previouslyPowered);
 		}
 	}
-	
+
 	@Override
 	public BlockEntityType<? extends SplitShaftBlockEntity> getBlockEntityType() {
 		return AllBlockEntityTypes.CLUTCH.get();

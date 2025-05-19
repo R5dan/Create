@@ -91,7 +91,6 @@ public class CreativeMotorBlockEntity extends GeneratingKineticBlockEntity {
 				return false;
 			return direction.getAxis() != facing.getAxis();
 		}
-
 	}
 
 }

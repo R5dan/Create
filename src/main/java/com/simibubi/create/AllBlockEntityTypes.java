@@ -140,6 +140,7 @@ import com.simibubi.create.content.kinetics.steamEngine.SteamEngineBlockEntity;
 import com.simibubi.create.content.kinetics.steamEngine.SteamEngineRenderer;
 import com.simibubi.create.content.kinetics.steamEngine.SteamEngineVisual;
 import com.simibubi.create.content.kinetics.transmission.ClutchBlockEntity;
+import com.simibubi.create.content.kinetics.transmission.ComplexClutchBlockEntity;
 import com.simibubi.create.content.kinetics.transmission.GearshiftBlockEntity;
 import com.simibubi.create.content.kinetics.transmission.SplitShaftRenderer;
 import com.simibubi.create.content.kinetics.transmission.SplitShaftVisual;
@@ -316,6 +317,13 @@ public class AllBlockEntityTypes {
 		.blockEntity("clutch", ClutchBlockEntity::new)
 		.visual(() -> SplitShaftVisual::new, false)
 		.validBlocks(AllBlocks.CLUTCH)
+		.renderer(() -> SplitShaftRenderer::new)
+		.register();
+
+	public static final BlockEntityEntry<ComplexClutchBlockEntity> COMPLEX_CLUTCH = REGISTRATE
+		.blockEntity("complex_clutch", ComplexClutchBlockEntity::new)
+		.visual(() -> SplitShaftVisual::new, false)
+		.validBlocks(AllBlocks.COMPLEX_CLUTCH)
 		.renderer(() -> SplitShaftRenderer::new)
 		.register();
 

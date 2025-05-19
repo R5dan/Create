@@ -20,7 +20,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.ticks.TickPriority;
 
-public class GearshiftBlock extends AbstractEncasedShaftBlock implements IBE<SplitShaftBlockEntity> {
+public class GearshiftBlock<T extends BlockEntity> extends AbstractEncasedShaftBlock implements IBE<T> {
 
 	public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
 
